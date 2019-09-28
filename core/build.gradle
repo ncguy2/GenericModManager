@@ -1,0 +1,9 @@
+plugins {
+    id 'java'
+}
+
+dependencies {
+    compile project(":api")
+}
+
+mainClassName = "net.ncguy.manager.Launcher"

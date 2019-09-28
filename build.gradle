@@ -1,0 +1,63 @@
+plugins {
+    id 'java'
+    id 'application'
+    id "org.openjfx.javafxplugin" version "0.0.8"
+}
+
+group 'net.ncguy'
+version '1.0-SNAPSHOT'
+
+
+subprojects {
+
+    apply plugin: 'java'
+    apply plugin: 'application'
+    apply plugin: 'org.openjfx.javafxplugin'
+
+    sourceCompatibility = JavaVersion.VERSION_11
+
+    javafx {
+        version = 11
+        modules = ['javafx.controls', 'javafx.fxml', "javafx.graphics"]
+    }
+
+    group 'net.ncguy'
+    version '1.0-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+        maven {
+            url "http://dl.bintray.com/filipmalczak/maven"
+        }
+    }
+    dependencies {
+        compile(group: 'io.herrmann', name: 'java-generator-functions', version: '1.0')
+
+        testImplementation "junit:junit:4.12"
+    }
+
+    sourceSets {
+        main {
+            java {
+                srcDir "main/java"
+            }
+            resources {
+                srcDir "main/resources"
+            }
+        }
+        test {
+            java {
+                srcDir "test/java"
+            }
+            resources {
+                srcDir "test/resources"
+            }
+        }
+    }
+
+    task hello {
+        doLast { task ->
+            println "I'm $task.project.name"
+        }
+    }
+}
