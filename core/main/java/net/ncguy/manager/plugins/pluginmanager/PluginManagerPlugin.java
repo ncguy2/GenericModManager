@@ -1,11 +1,10 @@
 package net.ncguy.manager.plugins.pluginmanager;
 
-import javafx.scene.Node;
 import net.ncguy.manager.api.IPlugin;
 import net.ncguy.manager.api.IUIFactoryTask;
 import net.ncguy.manager.api.PluginMetadata;
-import net.ncguy.manager.plugin.controllers.PluginListController;
 
+import javax.swing.*;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
@@ -35,14 +34,14 @@ public class PluginManagerPlugin implements IPlugin {
                     }
 
                     @Override
-                    public Node build() {
+                    public JPanel build() {
                         return buildPluginTab();
                     }
                 }
         );
     }
 
-    static Node buildPluginTab() {
-        return PluginListController.build(PluginListController.class).get().t;
+    private static JPanel buildPluginTab() {
+        return new JPanel();
     }
 }

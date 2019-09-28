@@ -1,4 +1,4 @@
-package net.ncguy.manager.plugin.controllers;
+package net.ncguy.manager.fxml.controllers.controllers;
 
 import javafx.beans.property.Property;
 import javafx.beans.property.SimpleObjectProperty;
@@ -7,7 +7,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import net.ncguy.manager.api.IPlugin;
 import net.ncguy.manager.api.PluginMetadata;
-import net.ncguy.manager.controllers.AbstractController;
+import net.ncguy.manager.fxml.controllers.AbstractController;
 import net.ncguy.manager.utils.FXMLController;
 
 import java.net.URL;

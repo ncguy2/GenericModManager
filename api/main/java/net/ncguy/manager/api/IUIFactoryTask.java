@@ -1,10 +1,10 @@
 package net.ncguy.manager.api;
 
-import javafx.scene.Node;
+import javax.swing.*;
 
 public interface IUIFactoryTask {
 
-    Node build();
+    JPanel build();
 
     interface ITabTask extends IUIFactoryTask {
 

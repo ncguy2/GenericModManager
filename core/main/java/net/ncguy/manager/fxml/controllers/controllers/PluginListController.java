@@ -1,10 +1,10 @@
-package net.ncguy.manager.plugin.controllers;
+package net.ncguy.manager.fxml.controllers.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.layout.VBox;
 import net.ncguy.manager.api.IPlugin;
-import net.ncguy.manager.controllers.AbstractController;
+import net.ncguy.manager.fxml.controllers.AbstractController;
 import net.ncguy.manager.plugin.PluginRegistry;
 import net.ncguy.manager.utils.FXMLController;
 import net.ncguy.manager.utils.Tuple;
@@ -27,7 +27,7 @@ public class PluginListController extends AbstractController {
 
     private void addPluginItem(IPlugin plugin) {
 
-        Optional<Tuple<Node, PluginItemSummaryController>> build = PluginItemSummaryController.build(PluginItemSummaryController.class, ctrlr -> ctrlr.setPlugin(plugin));
+        Optional<Tuple<Node, PluginItemSummaryController>> build = build(PluginItemSummaryController.class, ctrlr -> ctrlr.setPlugin(plugin));
 
         build.ifPresent(tuple -> container.getChildren()
                                           .add(tuple.t));

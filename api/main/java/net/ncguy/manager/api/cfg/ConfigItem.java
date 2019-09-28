@@ -1,6 +1,6 @@
 package net.ncguy.manager.api.cfg;
 
-import javafx.beans.property.Property;
+import net.ncguy.manager.api.databinding.Property;
 
 public class ConfigItem<T> {
 

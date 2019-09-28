@@ -43,10 +43,12 @@ public class PluginRegistry {
         return getLoadedPlugins().size();
     }
 
+    @SuppressWarnings("WeakerAccess")
     public List<File> getPluginDirectories() {
         return pluginDirectories;
     }
 
+    @SuppressWarnings("WeakerAccess")
     public List<IPlugin> getLoadedPlugins() {
         return loadedPlugins;
     }
@@ -54,7 +56,7 @@ public class PluginRegistry {
     private void load() {
         // Find local plugins
         internalLoader = ServiceLoader.load(IPlugin.class);
-        internalLoader.stream().map(ServiceLoader.Provider::get).forEach(this::loadPlugin);
+        internalLoader.forEach(this::loadPlugin);
 
         if (getPluginDirectories().isEmpty()) {
             // Nothing on search path, all plugins that could be found have been found
@@ -65,9 +67,7 @@ public class PluginRegistry {
                            .map(ucl -> ServiceLoader.load(IPlugin.class, ucl))
                            .forEach(loader -> {
                                externalLoaders.add(loader);
-                               loader.stream()
-                                     .map(ServiceLoader.Provider::get)
-                                     .forEach(this::loadPlugin);
+                               loader.forEach(this::loadPlugin);
                            });
     }
 

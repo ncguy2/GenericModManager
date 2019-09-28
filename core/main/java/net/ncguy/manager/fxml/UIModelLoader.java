@@ -1,7 +1,8 @@
-package net.ncguy.manager.utils;
+package net.ncguy.manager.fxml;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import net.ncguy.manager.utils.Tuple;
 
 import java.io.IOException;
 import java.io.InputStream;

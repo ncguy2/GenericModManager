@@ -1,4 +1,4 @@
-package net.ncguy.manager.controllers;
+package net.ncguy.manager.fxml.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.Node;
