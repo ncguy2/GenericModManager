@@ -23,11 +23,6 @@ subprojects {
             url "http://dl.bintray.com/filipmalczak/maven"
         }
     }
-    dependencies {
-        compile(group: 'io.herrmann', name: 'java-generator-functions', version: '1.0')
-
-        testImplementation "junit:junit:4.12"
-    }
 
     sourceSets {
         main {
