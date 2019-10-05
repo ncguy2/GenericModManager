@@ -1,4 +1,4 @@
-package net.ncguy.manager;
+package net.ncguy.manager.fxml;
 
 import javafx.application.Application;
 import javafx.scene.Node;
@@ -30,8 +30,8 @@ public class FXMLLauncher extends Application {
             Scene scene = new Scene((Parent) t);
             primaryStage.setScene(scene);
             primaryStage.show();
+        }else{
+            throw new RuntimeException("Unable to find root window definition");
         }
-
-
     }
 }
